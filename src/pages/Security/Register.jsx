@@ -4,22 +4,45 @@ import Service from '../../services/http'
 function Register() {
   const services = new Service();
 
-  React.useEffect(() => {
-    services.get('GetCities').then(res => {
-      console.log("Employee data",res);
-    })
-  }, [services]);
-  const registerUser = React.useCallback(() => {
-    services.post('RegisterUser',{first_name: "kgang",last_name:"moloke",email:"eichlefoko@gmail.com",password: "Lefoko@1",system_id : "F87E8404-1CD7-482C-B041-F7FE7DB6B81F"})
-  }, [services])
-  return (
-    <div>
 
-    <button onClick={registerUser} type="button" className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
-      style={{ background: 'blue' }}
-    >
-      Register
-    </button>
+  const registerUser = React.useCallback(() => {
+    services.post('RegisterUser',{first_name: "kgang",last_name:"moloke",email:"eichlefoko@gmail.com",password: "Lefoko@1",system_id : "F87E8404-1CD7-482C-B041-F7FE7DB6B81F"});
+    document.location.href="/login";
+  }, [services])
+  
+  return (
+    <div className='flex flex-wrap justify-center mt-20'>
+        <div className='w-full max-w-sm'>
+            <div className='mb-5'>
+              <label htmlFor='' className='block text-grey-700 text-sm font-bold mb-2'>
+                Email
+              </label>
+              <input type='text' className='shodow appearance-none border rounded w-full py-2' placeholder='Email'></input>
+            </div>
+            <div className='mb-5'>
+              <label htmlFor='' className='block text-grey-700 text-sm font-bold mb-2'>
+                First Name
+              </label>
+              <input type='text' className='shodow appearance-none border rounded w-full py-2' placeholder='First Name'></input>
+            </div>
+            <div className='mb-5'>
+              <label htmlFor='' className='block text-grey-700 text-sm font-bold mb-2'>
+                Last Name
+              </label>
+              <input type='text' className='shodow appearance-none border rounded w-full py-2' placeholder='Last Name'></input>
+            </div>
+            <div className='mb-5'>
+              <label htmlFor='' className='block text-grey-700 text-sm font-bold mb-2'>
+                Password
+              </label>
+              <input type='password' className='shodow appearance-none border rounded w-full py-2' placeholder='Password'></input>
+            </div>
+            <div className='flex items-center justify-between'>
+              <button onClick={registerUser} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full'>
+                Register
+              </button>
+            </div>
+        </div>
     </div>
     
   )

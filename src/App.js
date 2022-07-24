@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { Children, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 //because of import index.jsx they can get importted in one line
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Report, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Register, Login } from './pages';
+import { Report, Meals, Calendar, Teachers, Stacked, Pyramid, Childlist, TaskList, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Register, Login } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -75,12 +75,12 @@ const App = () => {
                 <Route path="/report" element={(<Report />)} />
 
                 {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                <Route path="/meals" element={<Meals />} />
+                <Route path="/teachers" element={<Teachers />} />
+                <Route path="/Childlist" element={<Childlist />} />
 
                 {/* apps  */}
-                <Route path="/kanban" element={<Kanban />} />
+                <Route path="/tasklist" element={<TaskList />} />
                 <Route path="/editor" element={<Editor />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
