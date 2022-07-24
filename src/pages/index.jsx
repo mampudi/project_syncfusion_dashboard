@@ -1,4 +1,4 @@
-export { default as Ecommerce } from './Ecommerce';
+export { default as Report } from './Report';
 export { default as Kanban } from './Kanban';
 export { default as Orders } from './Orders';
 export { default as Employees } from './Employees';
@@ -14,4 +14,9 @@ export { default as Line } from './Charts/Line';
 export { default as Pie } from './Charts/Pie';
 export { default as Pyramid } from './Charts/Pyramid';
 export { default as Stacked } from './Charts/Stacked';
+
+export { default as Register } from './Security/Register';
+export { default as Login } from './Security/Login';
+export { default as AddStudent } from './Admin/AddStudent';
+export { default as AddTeacher } from './Admin/AddTeacher';
 

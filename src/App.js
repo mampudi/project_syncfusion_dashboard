@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
+//because of import index.jsx they can get importted in one line
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
+import { Report, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Register, Login } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -64,9 +65,14 @@ const App = () => {
               {themeSettings && (<ThemeSettings />)}
 
               <Routes>
+
+                 {/* security  */}
+                 <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+
                 {/* dashboard  */}
-                <Route path="/" element={(<Ecommerce />)} />
-                <Route path="/ecommerce" element={(<Ecommerce />)} />
+                <Route path="/" element={(<Report />)} />
+                <Route path="/report" element={(<Report />)} />
 
                 {/* pages  */}
                 <Route path="/orders" element={<Orders />} />
